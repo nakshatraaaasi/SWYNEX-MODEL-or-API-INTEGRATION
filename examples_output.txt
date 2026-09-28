@@ -1,0 +1,34 @@
+INPUT : When is the deadline for paying college fees?
+OUTPUT: The semester fee deadline is usually announced by the accounts office; please check the notice board for exact dates.
+MATCHED FAQ: What is the last date to pay the semester fee?
+SCORE : 0.77
+
+INPUT : How do I see how many classes I have attended?
+OUTPUT: You can check your attendance on the college ERP portal under the Attendance section.
+MATCHED FAQ: How can I check my attendance percentage?
+SCORE : 0.63
+
+INPUT : What percentage of attendance do I need to write exams?
+OUTPUT: A minimum of 75% attendance is required to be eligible for semester exams.
+MATCHED FAQ: What is the minimum attendance required to sit for exams?
+SCORE : 0.77
+
+INPUT : Where can I get a letter proving I am a student here?
+OUTPUT: Apply through the examination department with the prescribed fee for an official transcript.
+MATCHED FAQ: How do I get a transcript of my marks?
+SCORE : 0.51
+
+INPUT : I forgot my portal login password
+OUTPUT: Click on 'Forgot Password' on the ERP login page and follow the OTP verification steps.
+MATCHED FAQ: How do I reset my ERP portal password?
+SCORE : 0.75
+
+INPUT : What time does the library close?
+OUTPUT: The library is open from 9 AM to 6 PM on all working days.
+MATCHED FAQ: What are the library timings?
+SCORE : 0.64
+
+INPUT : What is the weather today?
+OUTPUT: I don't know this yet. Please contact the college office.
+MATCHED FAQ: None
+SCORE : 0.11

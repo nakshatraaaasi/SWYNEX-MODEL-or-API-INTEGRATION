@@ -1,0 +1,45 @@
+# SWYNEX-Model-or-API-Integration
+
+## Task 2: Model or API Integration
+Builds on Task 1 (Student FAQ Q&A System). Instead of keyword-based TF-IDF, this prototype integrates a **pretrained AI model** to understand the *meaning* of a student's question.
+
+### Model Used
+- **sentence-transformers / all-MiniLM-L6-v2** (open-source, from Hugging Face)
+- Runs locally on CPU - **no API key or secret needed**
+
+### How it Works
+1. All FAQ questions are converted into semantic embeddings by the model.
+2. The student's query is embedded the same way.
+3. Cosine similarity finds the closest FAQ question.
+4. If the score is below 0.40, the bot says "I don't know" instead of guessing.
+
+### Why this is better than Task 1
+TF-IDF only matches shared words. The embedding model matches meaning, so
+"letter proving I am a student" can match "bonafide certificate".
+
+### Run
+```bash
+pip install -r requirements.txt
+python model_qa.py          # interactive chat
+python run_examples.py      # runs sample inputs, saves examples_output.txt
+```
+(First run downloads the model, ~90 MB, internet needed once.)
+
+### Files
+- `model_qa.py` - model integration + chatbot
+- `run_examples.py` - example inputs/outputs generator
+- `examples_output.txt` - sample inputs and outputs from the model
+- `faq_data.csv` - FAQ dataset (20 Q&A pairs)
+- `requirements.txt` - dependencies
+
+### Security
+No API keys are used or stored in this repository.
+
+Submitted as part of the SWYNEX Technologies Internship - Task 2.
+### Known Failure Case
+Query: "Where can I get a letter proving I am a student here?"
+Expected: Bonafide certificate FAQ
+Model returned: Transcript FAQ (score 0.51)
+Reason: With only 20 FAQs and short questions, the model confuses similar
+"document request" questions. Fix: add more paraphrased FAQs per topic
+and raise the score threshold.
